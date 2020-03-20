@@ -1,0 +1,61 @@
+# Temporary and binary files
+*~
+*.py[cod]
+*.so
+*.cfg
+!setup.cfg
+*.orig
+*.log
+*.pot
+__pycache__/*
+.cache/*
+.*.swp
+*/.ipynb_checkpoints/*
+
+# Project files
+.ropeproject
+.project
+.pydevproject
+.settings
+.idea
+
+# Package files
+*.egg
+*.eggs/
+.installed.cfg
+*.egg-info
+
+# Unittest and coverage
+htmlcov/*
+.coverage
+.tox
+junit.xml
+coverage.xml
+
+# Build and docs folder/files
+build/*
+dist/*
+sdist/*
+docs/api/*
+docs/_build/*
+cover/*
+MANIFEST
+
+# VSCode
+.vscode
+.venv
+poetry.lock
+
+# Local settings
+src/hephaestus/settings.py
+src/hephaestus/settings.json
+src/hephaestus/model/*
+# except
+!src/hephaestus/model/placeholder.md
+
+src/hephaestus/resources/*
+# except
+!src/hephaestus/resources/placeholder.md
+
+# This Gist is downloaded by GIST vscode plugin
+notes/public-gist.md
