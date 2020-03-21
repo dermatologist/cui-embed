@@ -1,10 +1,15 @@
 [tool.poetry]
 name = "cui-embed"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "A Gensim model for clinical text."
 authors = ["Bell Eapen <github_public@gulfdoctor.net>"]
 
 readme = 'README.md'  # Markdown files are supported
+
+repository = "https://github.com/dermatologist/cui-embed"
+homepage = "https://github.com/dermatologist/cui-embed"
+
+include = ["cui_embed/model/placeholder.md"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
