@@ -16,13 +16,14 @@ class Cuimodel(object):
         if model_exists is not True:
             url = 'https://ndownloader.figshare.com/files/10959626'
             print('No model found. Downloading model...')
+            urllib.request.urlretrieve(url, os.path.join(self.model_directory, 'cui2vec_pretrained.csv.zip'))
             print('This may take some time')
             print('Unzipping model...')
-            with zipfile.ZipFile(self.model_directory + 'cui2vec_pretrained.csv.zip', "r") as zip_ref:
+            with zipfile.ZipFile(os.path.join(self.model_directory, 'cui2vec_pretrained.csv.zip'), "r") as zip_ref:
                 zip_ref.extractall(self.model_directory)
             print('Processing model...')
-            with open(self.model_directory + 'cui2vec_pretrained.csv', 'r') as f:
-                with open(self.model_directory + "cui2vec_g.txt", 'w') as f1:
+            with open(os.path.join(self.model_directory, 'cui2vec_pretrained.csv'), 'r') as f:
+                with open(os.path.join(self.model_directory, "cui2vec_g.txt"), 'w') as f1:
                     next(f)  # skip header line
                     count = 0
                     for line in f:
@@ -32,12 +33,13 @@ class Cuimodel(object):
                         f1.write(line)
                         count += 1
             print('Converting model ...')
-            glove2word2vec(self.model_directory + "cui2vec_g.txt", self.model_directory + "cui2vec_w.txt")
-            wv_from_text = KeyedVectors.load_word2vec_format(self.model_directory + 'cui2vec_w.txt', unicode_errors='ignore')
-            wv_from_text.save_word2vec_format(self.model_directory + 'cui2vec_gensim.bin', binary=True)
+            glove2word2vec(os.path.join(self.model_directory, "cui2vec_g.txt"), os.path.join(self.model_directory, "cui2vec_w.txt"))
+            wv_from_text = KeyedVectors.load_word2vec_format(os.path.join(self.model_directory, 'cui2vec_w.txt'), unicode_errors='ignore')
+            wv_from_text.save_word2vec_format(os.path.join(self.model_directory, 'cui2vec_gensim.bin'), binary=True)
             print('Model processing completed ..')
-        return KeyedVectors.load_word2vec_format(self.model_directory + 'cui2vec_gensim.bin', unicode_errors='ignore', binary=True)
+        return KeyedVectors.load_word2vec_format(os.path.join(self.model_directory, 'cui2vec_gensim.bin'), unicode_errors='ignore', binary=True)
 
+@staticmethod
 def model(self):
     cm = Cuimodel()
     return cm.model()

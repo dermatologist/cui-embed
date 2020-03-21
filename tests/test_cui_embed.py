@@ -1,5 +1,8 @@
-from cui_embed import __version__
+import pytest
 
-
-def test_version():
-    assert __version__ == '0.1.0'
+def test_model():
+    from cui_embed import Cuimodel
+    cm = Cuimodel()
+    m = cm.model()
+    # 'C0002268'
+    assert len(m.most_similar_cosmul(['C0002268'])) > 0
