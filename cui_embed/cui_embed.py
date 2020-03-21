@@ -1,7 +1,7 @@
-from pkg_resources import resource_filename
 import os
 import urllib.request
 import zipfile
+import tempfile
 from gensim.models import KeyedVectors
 from gensim.scripts.glove2word2vec import glove2word2vec
 
@@ -9,7 +9,7 @@ class Cuimodel(object):
 
     def __init__(self):
         super().__init__()
-        self.model_directory = resource_filename('cui_embed', 'model')
+        self.model_directory = tempfile.gettempdir()
 
     def model(self):
         model_exists = os.path.exists(os.path.join(self.model_directory, 'cui2vec_gensim.bin'))
