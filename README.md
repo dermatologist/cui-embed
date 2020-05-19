@@ -1,10 +1,11 @@
 # cui-embed
 
-This is a gensim wrapper for the clinical (CUI) embeddings for the model [here](https://github.com/beamandrew/cui2vec)
+This is a gensim wrapper for the Concept Unique Identifier (CUI) embeddings from the model presented [here](https://github.com/beamandrew/cui2vec). The paper describing the model creation is [here](https://arxiv.org/abs/1804.01486). This can be used with [pyomop](https://github.com/dermatologist/pyomop) for efficient electronic phenotyping from [OHDSI](https://www.ohdsi.org/) CDM databases. 
+
+You can use [cui-cdm](https://github.com/E-Health/cui-cdm) for mapping CUI to OHDSI OMOP concepts and [umlsjs](https://github.com/dermatologist/umlsjs) for accessing UMLS REST APIs for CUI and other terminology management.
 
 * This does not include data/model.
 * Model is downloaded on first use
-
 
 ### Install
 
