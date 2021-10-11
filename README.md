@@ -18,6 +18,6 @@ pip install https://github.com/dermatologist/cui-embed/releases/download/1.0.0/c
 from cui_embed import Cuimodel
 cm = Cuimodel()
 m = cm.model()
-print(m.most_similar_cosmul(['C0002268'])
+print(m.most_similar_cosmul(['C0002268']))
     
 ```
