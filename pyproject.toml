@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cui-embed"
-version = "1.0.0"
+version = "1.1.0"
 description = "A Gensim model for clinical text."
 authors = ["Bell Eapen <github_public@gulfdoctor.net>"]
 
