@@ -13,7 +13,8 @@ You can use [cui-cdm](https://github.com/E-Health/cui-cdm) for mapping CUI to OH
 ### Install
 
 ```
-pip install https://github.com/dermatologist/cui-embed/releases/download/1.0.0/cui_embed-1.0.0-py3-none-any.whl
+pip install git+https://github.com/dermatologist/cui-embed.git
+
 ```
 ### Use
 
