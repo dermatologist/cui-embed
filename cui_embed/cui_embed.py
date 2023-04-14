@@ -66,12 +66,10 @@ class Cuimodel(object):
                 print('This may take some time')
                 print('Converting model ...')
                 for k, embedding in data.items():
-                    # line = k + ' ' + ' '.join(v) + ' \n'
-                    # f1.write(line)
-                    # with open('data/' + k + '.txt', 'w') as f1:
-                    #     for term, weights in embedding.items():
-                    #         line = term + ' ' + ' '.join(weights) + ' \n'
-                    #         f1.write(line)
+                    with open('data/' + k + '.txt', 'w') as f1:
+                        for term, weights in embedding.items():
+                            line = term + ' ' + ' '.join(weights) + ' \n'
+                            f1.write(line)
                     if k == 'CBOW_CO_embeddings_100':
                         with open(os.path.join(self.model_directory, self.model_text), 'w') as f2:
                             f2.write(str(len(embedding)) + ' ' + '100' + ' \n')
