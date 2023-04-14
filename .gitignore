@@ -59,3 +59,5 @@ src/hephaestus/resources/*
 
 # This Gist is downloaded by GIST vscode plugin
 notes/public-gist.md
+
+data
