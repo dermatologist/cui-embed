@@ -19,6 +19,10 @@ class Cuimodel(object):
             self.model_url = "https://github.com/elleros/DSHealth2019_loinc_embeddings/raw/master/Data/loinc_s200_w5_c5_sg_wv.txt"
             self.model_name = 'loinc2vec_gensim.bin'
             self.model_text = 'loinc2vec_g.txt'
+        elif model == "clinical":
+            self.model_url = "https://huggingface.co/garyw/clinical-embeddings-300d-ft-cr/resolve/main/ft_oa_corp_300d.bin?download=true"
+            self.model_name = 'clinical2vec_gensim.bin'
+            self.model_text = 'clinical2vec_g.txt'
         else:
             raise ValueError("Model not found")
 
@@ -48,7 +52,7 @@ class Cuimodel(object):
                 print('Converting model ...')
                 glove2word2vec(os.path.join(self.model_directory, self.model_text), os.path.join(
                     self.model_directory, self.model_text))
-            elif self.model_type == "loinc":
+            elif self.model_type == "loinc" or self.model_type == "clinical":
                 url = self.model_url
                 print('No model found. Downloading model...')
                 urllib.request.urlretrieve(url, os.path.join(
